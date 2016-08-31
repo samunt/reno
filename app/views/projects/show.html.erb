@@ -1,0 +1,121 @@
+
+
+<div class="individualProductPageBody">
+
+<%= link_to "Main Page", projects_path, class:"backToAllProjectsButton" %>
+<h1 class="project-name-show"><%= @project.name %></h1>
+<%= image_tag @project.picture_url, class:"individualProductPageImage" %>
+
+<div class="keyProjectInfo">
+<p class="project-max-shares-show"><%= @project.max_shares %></p> Total shares in the company
+<p class="sharesAvailable"><%= @project.calculate_shares("left") %></p> Shares remaining
+<p class="daysToGo"><%= @project.days_left%></p> Fundraising days remain
+</div>
+
+
+<h4 class="project-description-title-show">Description</h4>
+<p class="project-description-show"><%= @project.description %></p>
+
+
+<p class="sharesSold">Percentage of Shares Sold: <%= @project.percentage.round(1)%>%</p>
+<p id="qwerty"><%= @project.percentage.round(1) %> </p>
+
+  <div id="myProgress">
+    <div id="myBar"></div>
+  </div>
+
+
+<script>
+function move() {
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var percent = document.getElementById("qwerty").textContent
+    var id = setInterval(frame, 20);
+    percent = parseInt(percent.slice(0,percent.length-1))
+    function frame() {
+        if (width >= percent) {
+            clearInterval(id);
+        } else {
+            width++;
+            elem.style.width = width + '%';
+        }
+    }
+}
+move();
+</script>
+<br>
+<div class="pricePerShare"> PPS:<br><br>
+<% @project.shares.each do |share| %>
+<%= share.share_type %> @ <%= share.price %>$ / share <br>
+<% end %>
+</div>
+
+<div class=purchaseForm>
+<h2 class="purchaseFormTitle"> Buy </h2>
+<%= form_for @purchase do |f| %>
+<div class="numSharesOnForm"
+<%= f.label :number_of_shares %>
+<%= f.number_field :number_of_shares %>
+<br>
+<%= f.label :share_type %>:<br>
+<div id='project-show-radio'>
+<% @project.shares.each do |share| %>
+
+<%= f.radio_button :share_id, share.id%> <%=share.share_type%><br>
+<% end %>
+</div>
+<br>
+<%= f.hidden_field :project_id, value: @project.id %>
+<div class="purchaseButton">
+  <%= f.submit "Buy"%>
+<% end %>
+
+
+</div>
+</div>
+
+</div>
+<br><br><br><br><br>
+<script type="text/javascript">
+ $(function () {
+  url = document.URL.split("/")
+
+  $.ajax({
+    method: 'GET',
+    url: "/shares",
+    data: {project_id: url[url.length-1]}
+  }).done(function(response){
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+        text: "Breakdown of Share Types Purchased"
+      },
+      exportFileName: "Pie Chart",
+      exportEnabled: true,
+                  animationEnabled: true,
+      legend:{
+        verticalAlign: "bottom",
+        horizontalAlign: "center"
+      },
+      data: [
+      {
+        type: "pie",
+        showInLegend: true,
+        toolTipContent: "{legendText}: <strong>{y}%</strong>",
+        indexLabel: "{label} {y}%",
+        dataPoints: response
+    }
+    ]
+    });
+    // chart.render();
+  })
+
+  //ajax
+
+})
+</script>
+
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</body>

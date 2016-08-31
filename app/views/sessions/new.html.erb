@@ -1,0 +1,21 @@
+<div class="home-background-login">
+  <%= image_tag "GFY.jpg" %>
+</div>
+<div id='loginBackground'></div>
+  <div id='loginBox'>
+    <a href='/users/new' id='background-tab-right'>Sign Up</a>
+    <a href='/sessions/new' id='background-tab-left'>Log In</a>
+    <%= form_tag sessions_path do %>
+      <div class="form-field-top">
+        <%= label_tag :email %><br>
+        <%= email_field_tag :email, params[:email], id:'email-box' %>
+      </div>
+      <div class="form-field">
+        <%= label_tag :password %><br>
+        <%= password_field_tag :password %>
+      </div>
+      <%= submit_tag "Log In" , class:'login-submit'%>
+    <% end %>
+  </div>
+
+<%= link_to (image_tag 'Delete-50.png', id:'login-x'), root_path %>

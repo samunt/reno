@@ -1,0 +1,5 @@
+Welcome to gofundyourself! An app that lets you buy equity. 
+
+If you would like to see the project, clone this directory, bundle install and rake db:migrate. 
+
+Cheers!

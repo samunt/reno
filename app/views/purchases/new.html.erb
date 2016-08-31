@@ -1,0 +1,8 @@
+<%= link_to "Back to Projects", projects_path %>
+<%= form_for @purchase do |f| %>
+<h1 class="page-heading">Make a Transaction</h1>
+  <div class="field">
+      <%= f.label :number_of_shares %><br>
+      <%= f.number_field :number_of_shares %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<div class="home-background-login">
+  <%= image_tag "GFY.jpg", :style => "width: 100%;height:100%" %>
+</div>
+<div id='loginBackground'></div>
+<div class="home-content">
+    <h1 id="welcome-page">Need a home reno done?  <span style=color:#E9B000>Crowd-source it.</span></h1>
+    <p id="sub-header">We are an online platform specializing in home renovations</p>
+
+<% if current_user %>
+  <a href="/projects" class="myButton" style="border-radius: 15px;">Start Now</a>
+<% else %>
+  <a href="/users/new" class="myButton">Start Now</a>
+<% end %>
+</div>

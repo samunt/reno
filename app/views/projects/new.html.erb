@@ -1,0 +1,42 @@
+<h1 class="page-heading">Create a Project</h1>
+
+
+<%= form_for @project do |f| %>
+<div id='project-new-form'>
+  <div class="form-field-project-new">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, id: 'user-box' %>
+  </div>
+  <div class="form-field-project-new">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, id: 'user-box' %>
+  </div>
+  <div class="form-field-project-new">
+    <%= f.label :picture_url %><br>
+    <%= f.text_field :picture_url, id: 'user-box' %>
+  </div>
+  <div class="form-field-project-new">
+    <%= f.label :max_shares %><br>
+    <%= f.number_field :max_shares, id: 'user-box' %>
+  </div>
+  <div class="form-field-project-new">
+    <%= f.label :deadline %><br>
+    <%= f.datetime_select :deadline, :discard_hour => true, id: 'user-box' %>
+  </div>
+</div>
+
+<h1 class="page-heading">Shares Available For Sale</h1>
+
+    <%= f.fields_for :shares, html:{id: 'shares'} do |share| %>
+      <%= render 'share_fields', f: share%>
+
+    <div class="form-field-project-new">
+
+      <%= link_to_add_association 'add share type', f, :shares, {class:'links'} %>
+
+    <% end %>
+
+
+  <%= submit_tag "Create Project" , id:'project-submit-div'%>
+
+<% end %>

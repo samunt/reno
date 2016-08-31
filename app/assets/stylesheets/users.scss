@@ -1,0 +1,275 @@
+
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+* {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.body {
+  overflow: hidden;
+  background-color: #F9F9F9;
+}
+
+.profile-info {
+  overflow: hidden;
+  display: block;
+}
+.profile-page-image {
+  width: 136px;
+  border-radius: 100%;
+  display: inline-block;
+  float: left;
+  margin:  16px 24px 0px 44px;
+  border: 1px solid lightgrey;
+}
+
+.profile-page-user-info {
+  float: left;
+  margin-top: 56px;
+}
+.profile-page-name {
+  font-size: 36px;
+  margin: 0;
+
+}
+
+.profile-page-email {
+  font-size: 20px;
+  margin: 0;
+  color: #419B8D;
+  font-weight: lighter;
+
+}
+
+.profile-page-all-projects {
+  margin: 36px 0 0 44px;
+}
+
+.profile-page-projects {
+  margin-left: 44px;
+}
+.profile-page-project {
+  width: 296px;
+  height: 308px;
+  background-color: #F0F1F3;
+  display: inline-block;
+  border: 1px solid lightgrey;
+  margin-top: 24px;
+  margin-right: 40px;
+  overflow: hidden;
+}
+
+
+.profile-page-titles {
+  font-size: 20px;
+  margin: 36px 0 0 44px;
+}
+
+.project-image {
+  width: 294px;
+  height:164px;
+  border: 1px solid lightgrey;
+}
+.project-name-class {
+  font-size: 16px;
+  margin: 8px 16px;
+  display: inline-block;
+}
+
+.project-shares-total {
+  margin-left: 16px;
+  font-size: 14px;
+  margin-top: 0;
+  font-weight: lighter;
+}
+
+.project-funded {
+  font-size: 14px;
+  display: inline-block;
+  float: right;
+  margin: 8px 8px;
+  font-weight: lighter;
+  color: #419B8D;
+}
+
+.project-days-togo {
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 16px;
+  margin-top: 48px;
+  display: inline-block;
+  font-weight: lighter;
+}
+
+.edit-project {
+  font-size: 14px;
+  float: right;
+  display: inline-block;
+  margin-top: 48px;
+}
+
+.edit-project-link {
+  color: #419B8D;
+  font-weight: lighter;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+
+// shares styling
+.profile-page-purchases {
+  margin-left: 44px;
+}
+
+.profile-page-purchase{
+  height: 64px;
+  margin: 0px 44px 0 0;
+  margin-bottom: 0px;
+  padding-top: 24px;
+  overflow: hidden;
+}
+
+.profile-page-divider {
+  margin-right: 44px;
+}
+
+.purchase-project {
+  font-size: 16px;
+  display: inline-block;
+}
+
+.purchase-num-shares {
+  font-size: 14px;
+  display: inline-block;
+  float: right;
+  margin-left: 400px;
+  font-weight: lighter;
+}
+
+.profile-project-link {
+  color: #419B8D;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: lighter;
+}
+
+
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#loginBackground {
+  background-color: black;
+  width: 100%;
+  height: 1000px;
+  opacity: 0.5;
+  position: absolute;
+  z-index: 1
+
+}
+#loginBox {
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 50px;
+  background-color: #F0F0F5;
+  position: relative;
+  z-index: 2;
+}
+
+.home-background-login img {
+  width: 100%;
+  height: 1000px;
+  opacity: .7;
+  position: absolute;
+  z-index: 0;
+  }
+
+.form-field-top {
+  margin-left: 50px;
+  margin-top: 100px;
+}
+.form-field {
+  margin-left: 50px;
+}
+
+#user-box {
+  width: 300px;
+  height: 35px;
+  border: 2px solid #d9d9d9;
+  border-radius: 5%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#password {
+  width: 300px;
+  height: 35px;
+  border: 2px solid #d9d9d9;
+  border-radius: 5%;
+  margin-top: 5px;
+}
+
+.login-submit-user {
+  margin: 0 auto;
+  display: block;
+  text-decoration: none;
+  background-color:#00A08E;
+  border:1px solid #00A08E;
+  font-size:17px;
+  font-weight: lighter;
+  color: white;
+  padding:5px 25px;
+  margin-top: 40px;
+  position: relative;
+}
+
+#login-x {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin: auto;
+  display: block;
+  background-color: #F0F0F5 ;
+  margin-top: 20px;
+  position:relative;
+  z-index: 9;
+  padding: 5px;
+}
+  #login-x:hover {
+    background-color: gray;
+  }
+
+#background-tab-right-user {
+  text-decoration: none;
+  width: 200px;
+  height: 50px;
+  border: 1px solid black;
+  position: absolute;
+  margin: auto;
+  margin-left: 0px;
+  background-color: black;
+  opacity: 0.3;
+  color: white;
+  line-height: 50px;
+  text-align: center;
+}
+
+#background-tab-left-user {
+  text-decoration: none;
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  margin: auto;
+  margin-left: 199px;
+  color: #00A08E;
+  line-height: 50px;
+  text-align: center;
+}

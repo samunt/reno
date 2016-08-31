@@ -1,0 +1,36 @@
+<div class="profile-info">
+  <img class="profile-page-image" src="http://www.thebolde.com/wp-content/uploads/2015/11/iStock_000083903869_Small-400x400.jpg">
+  <div class="profile-page-user-info">
+    <h2 class="profile-page-name"><%= @user.name %></h2>
+    <h3 class="profile-page-email"><%= @user.email %></h3>
+  </div>
+</div>
+
+<h4 class="profile-page-titles">ALL PROJECTS ( <%= @user.projects.count %> )</h4>
+<div class="profile-page-projects">
+  <% @user.projects.each do |project| %>
+      <div class="profile-page-project">
+      <a href="/projects/<%= project.id %>"><img class="project-image" src="<%= project.picture_url %>" alt=""></a>
+      <h1 class="project-name-class"><%= project.name %></h1>
+      <h1 class="project-funded"><%= project.percentage.round(1) %>% funded</h1>
+      <h1 class="project-shares-total"><%= project.calculate_shares('left') %> Shares Left</h1>
+      <h1 class="project-days-togo"><%= project.days_left %> Days left</h1>
+      <h1 class="edit-project"><%= link_to "(Edit Project)", edit_project_path(project), class:"edit-project-link"%></h1>
+    </div>
+  <% end %>
+
+</div>
+<h4 class="profile-page-titles">PURCHASES (<% count = 0
+  @user.purchases.each do |purchase|
+     count += purchase.number_of_shares
+   end %>
+   <%= count %>
+)</h4>
+<div class="profile-page-purchases">
+  <% @user.purchases.each do |purchase| %>
+    <div class="profile-page-purchase">
+      <h1 class="purchase-project"><%= purchase.project.name %> <%= link_to "(See Project)", project_path(purchase.project.id), class:"profile-project-link" %></h1>
+      <h1 class="purchase-num-shares"><%= purchase.number_of_shares %> shares bought | Market Value $<%= (purchase.share.price) * purchase.number_of_shares %></h1>
+    </div>
+    <hr class="profile-page-divider">
+  <% end %>

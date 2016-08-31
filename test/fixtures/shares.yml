@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  price: 1
+  project_id: 
+  transaction_id: 
+
+two:
+  type: 
+  price: 1
+  project_id: 
+  transaction_id: 

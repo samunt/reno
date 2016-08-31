@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="/assets/projects.scss">
+
+<div class='nested-fields' id='nested-fields-margin'>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price, id:'user-box' %>
+  </div>
+  <div class="field">
+    <%= f.label :share_type %><br>
+    <%= f.text_field :share_type, id:'user-box' %>
+  </div>
+  <%= link_to_remove_association "remove share type", f %>
+  <br><br>
+</div>

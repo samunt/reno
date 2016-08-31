@@ -1,0 +1,13 @@
+<div class="page-body">
+
+<h1 class="page-heading">All Projects</h1>
+<% @projects.each do |project| %>
+<div class="project-card">
+  <%= link_to image_tag(project.picture_url), project_path(project), :id =>'viewProjectImage'%>
+  <h1 class="project-name"><%= project.name %></h1>
+  <div class="project-description"><%= project.description %></div>
+  <%= link_to "See Project", project_path(project), class:"project-link" %>
+</div>
+<% end %>
+
+</div>

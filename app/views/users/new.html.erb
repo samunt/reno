@@ -1,0 +1,31 @@
+<div class="home-background-login">
+  <%= image_tag "GFY.jpg" %>
+</div>
+<div id='loginBackground'></div>
+  <div id='loginBox'>
+    <a href='/sessions/new' id='background-tab-right-user'>Log In</a>
+    <a href='/users/new' id='background-tab-left-user'>Sign Up</a>
+    <%= form_for @user do |f| %>
+      <div class='form-field-top'>
+        <%= f.label :name %>
+        <%= f.text_field :name , id:'user-box'%>
+      </div>
+      <div class="form-field">
+        <%= f.label :email %><br>
+        <%= f.email_field :email, id:'user-box' %>
+      </div>
+      <div class="form-field">
+        <%= f.label :password %><br>
+        <%= f.password_field :password , id:'user-box' %>
+      </div>
+      <div class='form-field'>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, id: 'user-box' %>
+      </div>
+
+      <div id='login-submit-div'><%= submit_tag "Create Account" , class:'login-submit-user'%></div>
+
+    <% end %>
+  </div>
+
+<%= link_to (image_tag 'Delete-50.png', id:'login-x'), root_path %>

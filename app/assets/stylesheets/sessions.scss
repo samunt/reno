@@ -1,0 +1,86 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.form-field-top {
+  margin-left: 50px;
+  margin-top: 100px;
+}
+.form-field {
+  margin-left: 50px;
+}
+
+#email-box {
+  width: 300px;
+  height: 35px;
+  border: 2px solid #d9d9d9;
+  border-radius: 5%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#password {
+  width: 300px;
+  height: 35px;
+  border: 2px solid #d9d9d9;
+  border-radius: 5%;
+  margin-top: 5px;
+}
+
+.login-submit {
+  margin: 0 auto;
+  display: block;
+  text-decoration: none;
+  background-color:#00A08E;
+  border:1px solid #00A08E;
+  font-size:17px;
+  font-weight: lighter;
+  color: white;
+  padding:5px 25px;
+  margin-top: 40px;
+  position: relative;
+}
+
+#login-x {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin: auto;
+  display: block;
+  background-color: #F0F0F5 ;
+  margin-top: 20px;
+  position:relative;
+  z-index: 9;
+  padding: 5px;
+}
+  #login-x:hover {
+    background-color: gray;
+  }
+
+  #background-tab-right {
+    text-decoration: none;
+    width: 200px;
+    height: 50px;
+    border: 1px solid black;
+    position: absolute;
+    margin: auto;
+    margin-left: 199px;
+    background-color: black;
+    opacity: 0.3;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  #background-tab-left {
+    text-decoration: none;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    margin: auto;
+    color: #00A08E;
+    line-height: 50px;
+    text-align: center;
+  }
